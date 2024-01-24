@@ -1,0 +1,28 @@
+#!/bin/bash
+select opt in connectWarp openVPN ping disconnectwarp
+do
+   if [ "$opt" == "connectWarp" ]
+   then
+       warp-svc register&
+       warp-cli register
+       warp-cli connect
+   fi
+   if [ "$opt" == "disconnectwarp" ]
+   then
+       warp-cli disconnect
+   fi
+   if [ "$opt" == "openVPN" ]
+   then
+      echo " write your path "
+      read path
+      openvpn "$path"
+   fi 
+   if [ "$opt" == "disconnectwarp" ]
+   then 
+      warp-cli disconnect
+   fi
+   if [ "$opt" == "ping" ]
+   then
+      ping 10.10.10.10
+   fi
+done
