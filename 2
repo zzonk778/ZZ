@@ -1,0 +1,5 @@
+#!/bin/bash
+echo " backing up started now ...... $HOME " 
+mylocation=$(pwd)
+tar -cf "$mylocation/my_backup_$(date +%d-%m-%Y_%H-%M-%S).tar" $HOME
+echo " DONE $mylocation "
