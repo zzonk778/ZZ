@@ -1,0 +1,6 @@
+!/bin/bash
+read -p "what is length you want " length
+for i in {1..10}
+do
+   tr -cd '[:alnum:]' < /dev/urandom | fold --width ${length} | head -n 1
+done
