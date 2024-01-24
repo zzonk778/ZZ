@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "enter"
+read name
+stat $name 
+echo "$stat"
