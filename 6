@@ -1,2 +1,8 @@
 #!/bin/bash
-echo " th
+read -p "put your domain here :  " domain
+
+sublist3r -d $domain  -o output.txt
+for i in $(cat output.txt)
+do
+   amass enum -d $i
+done
